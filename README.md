@@ -6,7 +6,7 @@ This project has a csv file that we need some data extracted from. We want to ge
 
 You can change anything you want except for the roster.csv file. You can rewrite the specs, anything in lib and you can even add gems if you think that might be helpful. You don't need to change anything if you think the existing structure is good.
 
-Fork this project and give me access to your forked version.
+Pull a copy of the repo down and complete the project however you normally would. Instead of pushing to a fork, please send in a zip of your completed project.
 
 Here's what I'll be thinking about when I look at your solution:
 
