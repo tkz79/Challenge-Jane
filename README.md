@@ -1,4 +1,10 @@
-# Welcome
+# Readme
+
+Let Luke know that I found the commit message re: not forking the project.
+
+
+
+# Assignment
 
 This project has a csv file that we need some data extracted from. We want to generate a count of how often different domains are being used in email addresses. There is a single spec that should demonstrate what we need.
 
