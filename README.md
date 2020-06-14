@@ -2,7 +2,16 @@
 
 Let Luke know that I found the commit message re: not forking the project.
 
+## Exit Codes
+* 0 - Success
+* 1 - Invalid command line option
+* 2 - Missing command line Argument
 
+## Future Improvements
+* Add option for generating a new file on demand with a file path and optional line count
+* Add option for sorting the results
+* Add option for CSV column that contains email address
+* Use sqlite instead of results Hash in ParseCSV
 
 # Assignment
 
