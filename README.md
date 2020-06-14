@@ -9,11 +9,13 @@ Let Luke know that I found the commit message re: not forking the project.
 * 3 - Source CSV not found
 * 4 - Insufficient permissions to read source CSV
 * 5 - Malformed CSV Error in source CSV
+* 6 - Insufficient permissions to write results CSV
 
 ## Future Improvements
 * Add option for generating a new file on demand with a file path and optional line count
 * Add option for sorting the results
 * Add option for CSV column that contains email address
+* Add option for passing an output directory and file name
 * Use sqlite instead of results Hash in ParseCSV
 
 # Assignment
