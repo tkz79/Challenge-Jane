@@ -6,6 +6,9 @@ Let Luke know that I found the commit message re: not forking the project.
 * 0 - Success
 * 1 - Invalid command line option
 * 2 - Missing command line Argument
+* 3 - Source CSV not found
+* 4 - Insufficient permissions to read source CSV
+* 5 - Malformed CSV Error in source CSV
 
 ## Future Improvements
 * Add option for generating a new file on demand with a file path and optional line count
