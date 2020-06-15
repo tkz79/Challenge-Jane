@@ -34,11 +34,9 @@ end
 def parse_options(args:)
   ParseOptions.new.parse(args: args)
 rescue OptionParser::InvalidOption => e
-  warn e.message
-  exit(1)
+  rescue_exit(e, 1)
 rescue OptionParser::MissingArgument => e
-  warn e.message
-  exit(2)
+  rescue_exit(e, 2)
 end
 
 # @pram +options+ [ScriptOptions]
@@ -60,27 +58,30 @@ end
 def parse_csv(csv_parser)
   csv_parser.parse
 rescue Errno::ENOENT => e
-  warn e.message
-  exit(3)
+  rescue_exit(e, 3)
 rescue Errno::EACCES => e
-  warn e.message
-  exit(4)
+  rescue_exit(e, 4)
 rescue CSV::MalformedCSVError => e
-  warn e.message
-  exit(5)
+  rescue_exit(e, 5)
 end
 
 def build_result_writer
   WriteCSV.new
 rescue Errno::EACCES => e
-  warn e.message
-  exit(6)
+  rescue_exit(e, 6)
 end
 
 # @pram +csv_parser+ [ParseCSV]
 # @pram +results_writer+ [WriteCSV]
 def write_results(csv_parser, results_writer)
   results_writer.write_results(headers: HEADER_LABELS, results: csv_parser.results)
+end
+
+# @pram +exception+ [*Exception]
+# @pram +code+ [Integer]
+def rescue_exit(exception, code)
+  warn exception.message
+  exit(code)
 end
 
 main
