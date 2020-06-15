@@ -29,7 +29,7 @@ def main
   exit 0
 end
 
-# @pram +args+ [Array]
+# @param +args+ [Array]
 # @return [ScriptOptions]
 def parse_options(args:)
   ParseOptions.new.parse(args: args)
@@ -39,14 +39,14 @@ rescue OptionParser::MissingArgument => e
   rescue_exit(e, 2)
 end
 
-# @pram +options+ [ScriptOptions]
+# @param +options+ [ScriptOptions]
 # @return [ParseCSV]
 def build_csv_parser(options)
   file_name = source_file_path(options)
   ParseCSV.new(file_name: file_name, column: EMAIL_COLUMN)
 end
 
-# @pram +options+ [ScriptOptions]
+# @param +options+ [ScriptOptions]
 def source_file_path(options)
   case options.csv_source
   when 'input' then options.argument
@@ -54,7 +54,7 @@ def source_file_path(options)
   end
 end
 
-# @pram +csv_parser+ [ParseCSV]
+# @param +csv_parser+ [ParseCSV]
 def parse_csv(csv_parser)
   csv_parser.parse
 rescue Errno::ENOENT => e
@@ -71,14 +71,14 @@ rescue Errno::EACCES => e
   rescue_exit(e, 6)
 end
 
-# @pram +csv_parser+ [ParseCSV]
-# @pram +results_writer+ [WriteCSV]
+# @param +csv_parser+ [ParseCSV]
+# @param +results_writer+ [WriteCSV]
 def write_results(csv_parser, results_writer)
   results_writer.write_results(headers: HEADER_LABELS, results: csv_parser.results)
 end
 
-# @pram +exception+ [*Exception]
-# @pram +code+ [Integer]
+# @param +exception+ [*Exception]
+# @param +code+ [Integer]
 def rescue_exit(exception, code)
   warn exception.message
   exit(code)
